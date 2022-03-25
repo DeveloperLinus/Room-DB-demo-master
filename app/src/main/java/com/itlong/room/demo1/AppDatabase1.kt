@@ -6,7 +6,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.itlong.room.base.RoomApplication
 import java.lang.NullPointerException
 
 // 数据库
@@ -29,7 +28,7 @@ abstract class AppDatabase1 : RoomDatabase() {
         private fun buildDatabase(context: Context): AppDatabase1 {
             return Room.databaseBuilder(
                 context,
-                AppDatabase1::class.java, "userplugin")
+                AppDatabase1::class.java, "demo1plugin")
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
