@@ -13,37 +13,18 @@
             android:text="Room DB 用例正在运行中..."
             android:textSize="30sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_demo1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:orientation="horizontal">
+            android:text="demo1"
+            android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btn_insert_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="插入用户数据"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_demo2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_query_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="查询用户数据"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tv_query_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:text="demo2"
+            android:textSize="20sp" />
     </LinearLayout>
 </layout>

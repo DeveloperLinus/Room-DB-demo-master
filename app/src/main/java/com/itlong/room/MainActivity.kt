@@ -1,36 +1,21 @@
 package com.itlong.room
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.itlong.room.databinding.ActMainBinding
-import com.itlong.room.demo1.AppDatabaseManager
-import com.itlong.room.demo1.User
-import kotlinx.coroutines.*
 
-class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.act_main)
-        binding.btnInsertUser.setOnClickListener {
-            launch(Dispatchers.IO) {
-                AppDatabaseManager.db.userDao().insertAll(User(1, "huqinghui", "huqh"))
-            }
+        binding.btnDemo1.setOnClickListener {
+            startActivity(Intent(this, com.itlong.room.demo1.MainActivity::class.java))
         }
-        binding.btnQueryUser.setOnClickListener {
-            launch {
-                val deferred = async(Dispatchers.IO) {
-                    AppDatabaseManager.db.userDao().getAll()
-                }
-                val user = deferred.await()
-                binding.tvQueryUser.text = user.toString()
-            }
+        binding.btnDemo2.setOnClickListener {
+            startActivity(Intent(this, com.itlong.room.demo2.MainActivity::class.java))
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        cancel()
     }
 }
