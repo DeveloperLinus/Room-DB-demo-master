@@ -14,6 +14,20 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btn_insert_user1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="插入用户数据1"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <Button
                 android:id="@+id/btn_insert_face"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

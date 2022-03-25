@@ -2,6 +2,7 @@ package com.itlong.room.demo2
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.itlong.room.R
 import com.itlong.room.databinding.ActDemo2MainBinding
@@ -27,6 +28,12 @@ class MainActivity : Activity() {
 
         binding.btnDeleteFace.setOnClickListener {
             FaceManager.deleteByUid(userId)
+        }
+
+        binding.btnInsertUser1.setOnClickListener {
+            val userEntity = UserEntity("huqinghui", "123456")
+            val result = UserManager.insert(userEntity)
+            Log.d("Room", "插入用户数据成功,result=$result")
         }
     }
 }
